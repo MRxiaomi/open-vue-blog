@@ -30,5 +30,10 @@ module.exports = merge(baseWebpackConfig, {
       template: 'index.html',
       inject: true
     })
-  ]
+  ],
+  //  用来配置应用层的模块解析，即要被打包的模块
+  resolve: {
+    //  第一项扩展非常重要，千万不要忽略，否则经常出现模块无法加载错误
+    extensions: ['', '.js', '.es6', '.vue']
+  }
 })
